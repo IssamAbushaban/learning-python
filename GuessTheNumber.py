@@ -18,12 +18,19 @@ print("It's between " +
 
 while (guesses < maxguesses):
     # Let them know how many guesses they have left
-    print("Guesses left: " + str(3 - guesses) + "\n")
+    print("Guesses left: " + str(maxguesses - guesses) + "\n")
 
     # Ask for an answer
-    theGuess = int(input("Your guess: "))
-    print()
+    theGuess = input("Your guess: ")
     
+    # Stop the crazies out there
+    if(not theGuess.isdigit()):
+        print("\nThat's not even an integer!!!!!! XD")
+        continue
+    
+    # Give us a number to work with
+    theGuess = int(theGuess)
+
     # Logic for game
 
     # If we are out of bounds, tell them and return their guess count!
