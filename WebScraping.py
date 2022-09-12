@@ -3,6 +3,8 @@ import os
 import requests
 # This is to make the text coming from the site more readible
 from bs4 import BeautifulSoup 
+# So we can save our information
+import csv
 
 # Clear Console
 os.system('clear')
@@ -44,4 +46,19 @@ htmlContentFoundByClassFromSmallerSample = htmlContentFoundByID.find('ul', class
 # All the li under the above ul
 allLiUnderLeftBarList = htmlContentFoundByClassFromSmallerSample.find_all('li')
 
-print(allLiUnderLeftBarList)
+titleList = list()
+count = 1
+
+for line in allLiUnderLeftBarList:
+    print(line.text)
+    d = {}
+    d['Title Number'] = f'Title {count}'
+    d['Title Name'] = line.text
+    count += 1
+    titleList.append(d)
+
+fileToWriteOut = 'titles.csv'
+with open(fileToWriteOut, 'w', newline='') as f:
+    w = csv.DictWriter(f,['Title Number','Title Name'])
+    w.writeheader()
+    w.writerows(titleList)

@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudio,macos,windows,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,macos,windows,python
 
+# Personal Stuff
+*.csv
+
 ### macOS ###
 # General
 .DS_Store
