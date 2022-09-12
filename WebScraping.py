@@ -24,4 +24,14 @@ if (reqGET.status_code != 200):
 soupOfURI = BeautifulSoup(reqGET.content, 'html.parser')
 
 # Print content of request
-print(soupOfURI.prettify() + "\n")
+# print(soupOfURI.prettify() + "\n")
+
+# Getting the title tag
+print(soupOfURI.title)
+ 
+# Getting the name of the tag
+print(soupOfURI.title.name)
+ 
+# Getting the name of parent tag
+print(soupOfURI.title.parent.name)
+
