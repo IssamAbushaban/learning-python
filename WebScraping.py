@@ -35,3 +35,13 @@ print(soupOfURI.title.name)
 # Getting the name of parent tag
 print(soupOfURI.title.parent.name)
 
+# Finding Content By ID (main div)
+htmlContentFoundByID = soupOfURI.find('div', id= 'main')
+
+# Finding Content By Class (leftbarList list)
+htmlContentFoundByClassFromSmallerSample = htmlContentFoundByID.find('ul', class_='leftBarList')
+
+# All the li under the above ul
+allLiUnderLeftBarList = htmlContentFoundByClassFromSmallerSample.find_all('li')
+
+print(allLiUnderLeftBarList)
