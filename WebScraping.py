@@ -2,7 +2,7 @@ import os
 # This is to help us make HTTP request
 import requests
 # This is to make the text coming from the site more readible
-from bs4 import BeautifulSoup 
+from bs4 import BeautifulSoup
 # So we can save our information
 import csv
 
